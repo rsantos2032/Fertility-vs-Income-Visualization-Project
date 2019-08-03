@@ -173,6 +173,4 @@ d3.csv('WDIDataCleaned.csv').then(function(data) {
     button.on('click', function(d) {
       update(d3.timeFormat('%Y')(sliderTime.value()), false, true, d);
     })
-
-
 });
