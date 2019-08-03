@@ -23,7 +23,7 @@ var sliderTime = d3.sliderBottom()
                 .min(d3.min(dataTime))
                 .max(d3.max(dataTime))
                 .step(1000 * 60 * 60 * 24 * 365)
-                .width(width + margin.left + margin.right)
+                .width(800)
                 .tickFormat(d3.timeFormat('%Y'))
                 .tickValues(dataTime)
                 .default(new Date(2017, 10, 3));
@@ -34,7 +34,7 @@ var gTime = d3.select('div#slider-time').append('svg')
             .attr('width', width + margin.left + margin.right)
             .attr('height', 100)
             .append('g')
-            .attr('transform', 'translate(' + margin.left + ',' + margin.top +')');
+            .attr('transform', 'translate(' + 50 + ',' + margin.top +')');
 
 gTime.call(sliderTime);
 
@@ -63,7 +63,7 @@ d3.csv('WDIDataCleaned.csv').then(function(data) {
           .attr('class', 'x axis')
           .attr('transform', 'translate(0,' + height + ')')
           .call(xAxis.tickFormat(d3.format('.0s')))
-        svg.append('text')
+        .append('text')
           .style('font-size', '30px')
             .attr("transform",
                 "translate(" + (width/2) + " ," +
@@ -71,7 +71,7 @@ d3.csv('WDIDataCleaned.csv').then(function(data) {
           .style("text-anchor", "middle")
           .text('GDP per Capita (Constant 2010 $)');
 
-      var ticks = d3.selectAll(".tick text");
+      var ticks = svg.selectAll(".tick text");
 
       ticks.attr("class", function(d,i){
        if(i%2 != 1) d3.select(this).remove();
