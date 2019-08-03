@@ -34,7 +34,7 @@ var gTime = d3.select('div#slider-time').append('svg')
             .attr('width',width + margin.left + margin.right)
             .attr('height', 100)
             .append('g')
-            .attr('transform', 'translate(' + margin_change + ',' + margin.top +')');
+            .attr('transform', 'translate(' + margin.left + ',' + margin.top +')');
 
 gTime.call(sliderTime);
 
