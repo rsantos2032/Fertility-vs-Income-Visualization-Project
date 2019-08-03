@@ -19,8 +19,6 @@ var dataTime = d3.range(1, 30).map(function(d) {
   return new Date(1960 + 2 * d - 1, 10, 3);
 })
 
-
-
 var sliderTime = d3.sliderBottom()
                 .min(d3.min(dataTime))
                 .max(d3.max(dataTime))
@@ -88,10 +86,6 @@ d3.csv('WDIDataCleaned.csv').then(function(data) {
         .attr("dy", "1em")
         .style("text-anchor", "middle")
         .text('Fertility Rate');
-
-
-
-
 
     function drawPlot(data, transition) {
       if(transition == true) {
