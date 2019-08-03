@@ -28,7 +28,7 @@ var sliderTime = d3.sliderBottom()
                 .tickValues(dataTime)
                 .default(new Date(2017, 10, 3));
 
-var margin_change = margin.left - 50;
+var margin_change = margin.left - 70;
 
 var gTime = d3.select('div#slider-time').append('svg')
             .attr('width',width + margin.left + margin.right)
